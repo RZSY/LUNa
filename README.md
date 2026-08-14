@@ -1,1 +1,1 @@
-# LUNa
+# LUNa - Library Universal Navigation Panel

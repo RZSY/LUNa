@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LUNa — Library - Universal Navigation Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Loaded from a local file so charts still work with no internet connection.
+     See vendor/README.txt if this file is missing. -->
+<script src="vendor/chart.umd.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-head">
+      <div class="mark"><img src="assets/icon.png" alt="LUNa" class="mark-img"></div>
+      <div class="brand">LUNa</div>
+      <button class="collapse-btn" id="collapseBtn" aria-label="Collapse sidebar">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+    </div>
+    <nav class="nav" id="navList"></nav>
+    <div class="sidebar-foot"><span class="dot-live"></span><span>Local JSON DB · this device only</span></div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <h1 id="pageTitle">Dashboard</h1>
+      <div class="pillselect" id="branchPillWrap">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <select id="branchFilter"></select>
+      </div>
+      <div class="topbar-spacer"></div>
+      <button class="icon-btn" aria-label="Local database" id="dbBtn">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0018 0V5"/><path d="M3 12a9 3 0 0018 0"/></svg>
+      </button>
+      <button class="icon-btn" aria-label="Notifications" id="notifBtn"><span class="badge-dot"></span>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0112 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 003.4 0"/></svg>
+      </button>
+      <div class="avatar">SL</div>
+    </div>
+    <div class="content" id="content"></div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<div class="drawer" id="drawer"></div>
+<div class="toast-wrap" id="toastWrap"></div>
+
+<script src="data/branches.js"></script>
+<script src="data/catalogue.js"></script>
+<script src="data/copies.js"></script>
+<script src="data/members.js"></script>
+<script src="data/circulation.js"></script>
+<script src="data/config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
